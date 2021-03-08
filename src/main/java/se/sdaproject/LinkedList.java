@@ -56,13 +56,13 @@ public class LinkedList {
     }
 
     public int search(int num){
-        Integer index=0;
+        int index=0;
         if (first== null){
             return -1;
         }
         else{
             Node current= first;
-            if (current.elem==2){
+            if (current.elem==num){
                 return index;
             }
             else {
@@ -76,6 +76,61 @@ public class LinkedList {
             }
             return -1;
         }
+    }
+
+    public int get(int index){
+        int tempIndex=0;
+        int number=0;
+        if (first==null){
+            return -1;
+        }
+        else if(index==0){
+            number=first.elem;
+        }else {
+            Node current=first;
+            while (current.next!=null){
+                tempIndex=tempIndex+1;
+                if (tempIndex==index){
+                    return current.next.elem;
+                }
+                current=current.next;
+            }
+        }
+       return -1;
+    }
+
+    public int size(){
+        int size=1;
+        if (first==null){
+            return 0;
+        }
+        else{
+            Node current= first;
+            while(current.next!=null){
+                size+=1;
+                current=current.next;
+            }
+            return size;
+        }
+    }
+
+    public void remove(int num){
+        int index=this.search(num);
+        Node current=first;
+        if (index==0){
+            first=current.next;
+        }
+        else{
+            while (current!=null && current.next!=null){
+                if (current.next.elem== num){
+                    current.next=current.next.next;
+                }
+                current=current.next;
+            }
+        }
+
+
+
 
 
 

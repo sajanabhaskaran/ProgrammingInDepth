@@ -26,8 +26,40 @@ class LinkedListTests {
         LinkedList list=new LinkedList();
         list.add(12);
         list.add(2);
-        Integer indexValue=list.search(8);
-        assertEquals(-1,indexValue);
+        Integer indexValue=list.search(12);
+        assertEquals(0,indexValue);
+    }
+
+    @Test
+    void getNumberInTheGivenIndex(){
+        LinkedList list= new LinkedList();
+        list.add(12);
+        list.add(22);
+        list.add(45);
+        int actualNumber= list.get(2);
+        assertEquals(45,actualNumber);
+    }
+
+    @Test
+    void getSizeofALinkedList(){
+        LinkedList list=new LinkedList();
+        list.add(12);
+        list.add(22);
+        list.add(45);
+        int actualSize=list.size();
+        assertEquals(3,actualSize);
+
+    }
+
+    @Test
+    void removeFromLinkedList(){
+        LinkedList list= new LinkedList();
+        list.add(12);
+        list.add(22);
+        list.add(45);
+        list.remove(45);
+        String expected = "LinkedList(12,22)";
+        assertEquals(expected,list.toString());
     }
 
     @Test
