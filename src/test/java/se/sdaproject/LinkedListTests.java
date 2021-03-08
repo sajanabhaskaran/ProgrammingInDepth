@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 class LinkedListTests {
 
     @Test
@@ -16,7 +18,16 @@ class LinkedListTests {
         LinkedList list = new LinkedList();
         list.add(5);
         String expected = "LinkedList(5)";
-        assertEquals(list.toString(), expected);
+        assertEquals(expected,list.toString());
+    }
+
+    @Test
+    void searchNumberFromList(){
+        LinkedList list=new LinkedList();
+        list.add(12);
+        list.add(2);
+        Integer indexValue=list.search(8);
+        assertEquals(-1,indexValue);
     }
 
     @Test

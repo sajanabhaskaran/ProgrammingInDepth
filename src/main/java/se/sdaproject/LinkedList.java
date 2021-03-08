@@ -55,6 +55,32 @@ public class LinkedList {
 
     }
 
+    public int search(int num){
+        Integer index=0;
+        if (first== null){
+            return -1;
+        }
+        else{
+            Node current= first;
+            if (current.elem==2){
+                return index;
+            }
+            else {
+                while(current.next!=null){
+                    index+=1;
+                    if (current.next.elem== num) {
+                        return index;
+                    }
+                    current=current.next;
+                }
+            }
+            return -1;
+        }
+
+
+
+    }
+
     // useful for testing!
     public String toString() {
         // goal is to return a string like this:
